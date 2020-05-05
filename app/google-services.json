@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "800737892748",
+    "firebase_url": "https://iquiz-b969f.firebaseio.com",
+    "project_id": "iquiz-b969f",
+    "storage_bucket": "iquiz-b969f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800737892748:android:720fd8383dc156c873dea9",
+        "android_client_info": {
+          "package_name": "com.example.iquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800737892748-ma577sld76vlgtngsqjavop3euj0r5ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhW0M8MQK5cAONoyZZ1LvQe7NL6P8vEKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800737892748-ma577sld76vlgtngsqjavop3euj0r5ck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
