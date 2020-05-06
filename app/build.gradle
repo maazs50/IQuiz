@@ -40,5 +40,6 @@ dependencies {
     //Firebase maazs732@gmail.com
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
     implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation 'com.google.firebase:firebase-firestore:21.4.0'
 
 }

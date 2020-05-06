@@ -1,8 +1,10 @@
-package com.example.iquiz;
+package com.example.iquiz.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.iquiz.R;
 
 public class MainActivity extends AppCompatActivity {
 
