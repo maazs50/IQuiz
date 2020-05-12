@@ -5,6 +5,9 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -12,6 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.iquiz.R;
+import com.example.iquiz.adapters.QuizListAdpater;
+import com.example.iquiz.models.QuizListModel;
+import com.example.iquiz.view_models.QuizListViewModel;
+
+import java.util.List;
 
 
 /**
@@ -19,6 +27,8 @@ import com.example.iquiz.R;
  */
 public class ListFragment extends Fragment {
     private RecyclerView listView;
+    private QuizListViewModel viewModel;
+    private QuizListAdpater adpater;
     public ListFragment() {
         // Required empty public constructor
     }
@@ -35,5 +45,23 @@ public class ListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         listView = view.findViewById(R.id.list_view);
+        adpater = new QuizListAdpater();
+        listView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        listView.setHasFixedSize(true);
+        listView.setAdapter(adpater);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        //Initializing
+        viewModel = new ViewModelProvider(getActivity()).get(QuizListViewModel.class);
+        viewModel.getQuizListModelData().observe(getViewLifecycleOwner(), new Observer<List<QuizListModel>>() {
+            @Override
+            public void onChanged(List<QuizListModel> quizListModelList) {
+                adpater.setQuizListModels(quizListModelList);
+                adpater.notifyDataSetChanged();
+            }
+        });
     }
 }

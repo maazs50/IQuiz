@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ListFragment"
+    tools:context="fragments.ListFragment"
     android:background="@color/colorPrimaryDark"
     >
 
@@ -16,7 +16,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="64dp"
         android:fontFamily="@font/crimson_text"
-        android:text="iQuiz"
+        android:text="Quizz"
         android:textColor="@color/colorPrimary"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
