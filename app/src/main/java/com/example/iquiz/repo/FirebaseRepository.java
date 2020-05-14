@@ -14,7 +14,7 @@ import java.util.List;
 public class FirebaseRepository {
     private OnFirestoreTaskComplete onFirestoreTaskComplete;
 
-    private FirebaseFirestore firebaseFirestore;
+    private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private CollectionReference quizRef = firebaseFirestore.collection("QuizList");
 
     public FirebaseRepository(OnFirestoreTaskComplete onFirestoreTaskComplete){
