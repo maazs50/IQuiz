@@ -18,7 +18,10 @@ import java.util.List;
 
 public class QuizListAdpater extends RecyclerView.Adapter<QuizListAdpater.QuizViewHolder> {
     private List<QuizListModel> quizListModels;
-
+    private OnQuizItemClicked onQuizItemClicked;
+    public QuizListAdpater(OnQuizItemClicked onQuizItemClicked){
+        this.onQuizItemClicked = onQuizItemClicked;
+    }
     public void setQuizListModels(List<QuizListModel> quizListModels) {
         this.quizListModels = quizListModels;
     }
@@ -52,7 +55,7 @@ public class QuizListAdpater extends RecyclerView.Adapter<QuizListAdpater.QuizVi
         return quizListModels.size();
     }
 
-    public class QuizViewHolder extends RecyclerView.ViewHolder {
+    public class QuizViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView listImage;
         private TextView listTitle;
         private TextView listDesc;
@@ -65,6 +68,16 @@ public class QuizListAdpater extends RecyclerView.Adapter<QuizListAdpater.QuizVi
             listDesc = itemView.findViewById(R.id.list_desc);
             listLevel = itemView.findViewById(R.id.list_difficulty);
             listBtn = itemView.findViewById(R.id.list_btn);
+
+            listBtn.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            onQuizItemClicked.onItemClicked(getAdapterPosition());
+        }
+    }
+    public interface OnQuizItemClicked{
+         void onItemClicked(int position);
     }
 }
