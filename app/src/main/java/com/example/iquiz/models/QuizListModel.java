@@ -6,19 +6,19 @@ public class QuizListModel {
     @DocumentId
     private String quiz_id;
     private String name,desc,image,level,visibily;
-    private long quesitons;
+    private long questions;
 
     public QuizListModel(){
 
     }
-    public QuizListModel(String quiz_id, String name, String desc, String image, String level, String visibily, long quesitons) {
+    public QuizListModel(String quiz_id, String name, String desc, String image, String level, String visibily, long questions) {
         this.quiz_id = quiz_id;
         this.name = name;
         this.desc = desc;
         this.image = image;
         this.level = level;
         this.visibily = visibily;
-        this.quesitons = quesitons;
+        this.questions = questions;
     }
 
     public String getQuiz_id() {
@@ -69,11 +69,11 @@ public class QuizListModel {
         this.visibily = visibily;
     }
 
-    public long getQuesitons() {
-        return quesitons;
+    public long getQuestions() {
+        return questions;
     }
 
-    public void setQuesitons(long quesitons) {
-        this.quesitons = quesitons;
+    public void setQuestions(long questions) {
+        this.questions = questions;
     }
 }
