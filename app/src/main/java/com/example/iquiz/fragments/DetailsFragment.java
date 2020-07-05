@@ -36,6 +36,8 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
     private ImageView iv_details;
     private TextView tv_difficulty, tv_question, tv_desc, tv_title;
     private Button btn_start;
+    private String quizId;
+    private long totalQuestions;
     public DetailsFragment() {
         // Required empty public constructor
     }
@@ -77,6 +79,8 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
                 tv_difficulty.setText(model.getLevel());
                 tv_question.setText(model.getQuestions()+"");
                 tv_desc.setText(model.getDesc());
+                quizId = model.getQuiz_id();
+                totalQuestions = model.getQuestions();
             }
         });
     }
@@ -87,6 +91,8 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
             case R.id.details_start_btn:
                 DetailsFragmentDirections.ActionDetailsFragmentToQuizFragment action = DetailsFragmentDirections.actionDetailsFragmentToQuizFragment();
                 action.setPosition(position);
+                action.setQuizId(quizId);
+                action.setTotalQuestions(totalQuestions);
                 navController.navigate(action);
                 break;
         }
